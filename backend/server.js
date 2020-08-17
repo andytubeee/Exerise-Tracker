@@ -1,8 +1,8 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
-require("dotenv").config();
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -17,15 +17,15 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("Database is connected successfully to our server");
+connection.once('open', () => {
+  console.log('Database is connected successfully to our server');
 });
 
-const exerciseRouter = require("./routes/exercises");
-const userRouter = require("./routes/users");
+const exerciseRouter = require('./routes/exercises');
+const userRouter = require('./routes/users');
 
-app.use("/exercises", exerciseRouter);
-app.use("/users", userRouter);
+app.use('/exercises', exerciseRouter);
+app.use('/users', userRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
