@@ -21,6 +21,12 @@ connection.once("open", () => {
   console.log("Database is connected successfully to our server");
 });
 
+const exerciseRouter = require("./routes/exercises");
+const userRouter = require("./routes/users");
+
+app.use("/exercises", exerciseRouter);
+app.use("/users", userRouter);
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
