@@ -1,3 +1,3 @@
-MERN Full Stack Application.
+# MERN Full Stack Application.
 
 MongoDB, Express, React, Node.js
